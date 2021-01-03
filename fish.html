@@ -1,0 +1,47 @@
+<!DOCTYPE html><html lang="en"><head> <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="ie=edge"><link href="fish.css" rel="stylesheet" /><link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet"><script src="https://code.jquery.com/jquery-3.1.1.min.js"></script><link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet"><script src="//projects.codewizardshq.com/codewizards.js"></script><script src="//projects.codewizardshq.com/dist/skulpt.min.js" type="text/javascript"></script><script src="//projects.codewizardshq.com/dist/skulpt-stdlib.js" type="text/javascript"></script>
+    <title>Aquarium</title></head><body> <div id='canvas'></div><script>function outf(text){var mypre=document.getElementById("canvas"); mypre.innerHTML=mypre.innerHTML + text;}function builtinRead(x){if (Sk.builtinFiles===undefined || Sk.builtinFiles["files"][x]===undefined) throw "File not found: '" + x + "'"; return Sk.builtinFiles["files"][x];}function runit(){
+/******************************************************************************
+*                    P Y T H O N  C O D E  B E L O W
+*******************************************************************************/
+
+   /************************************************************************************/
+   
+     
+
+  
+var prog=
+`start()
+addHeading('Finding nemo',100)
+
+def addFish(fishX, fishY, fishSize, fishSource):
+   fish = addImage(fishSource, fishSize)
+   positionEl(fish, fishX, fishY)
+   moveX(fish, fishX, 1100, 'infinite', True)
+
+def addBubble(X, Y, size):
+   bubble= addImage("bubble.png", size)
+   positionEl(bubble, X, Y)
+   moveY(bubble, Y, -300, 'infinite', False)
+
+addFish(10, 400, 100,"fish.png")
+addFish(100, 300, 600,"fish3.png")
+addFish(400, 500, 150,"fish2.png")
+addFish(200, 450, 66,"fish3.png")
+addFish(100, 150, 44,"fish.png")
+
+addBubble(100, 500, 20)
+addBubble(230, 550, 15)
+addBubble(370, 450, 30)
+addBubble(200, 350, 24)
+addBubble(150, 400, 10)
+addBubble(700, 500, 20)
+addBubble(630, 400, 15)
+addBubble(870, 450, 30)
+addBubble(900, 350, 24)
+addBubble(1050, 400, 10)
+
+`;
+/******************************************************************************
+*                    P Y T H O N  C O D E  A B O V E
+*******************************************************************************/
+var mypre=document.getElementById("canvas"); mypre.innerHTML=''; Sk.pre="canvas"; Sk.configure({output:outf, read:builtinRead}); var myPromise=Sk.misceval.asyncToPromise(function(){return Sk.importMainWithBody("<stdin>", false, prog, true);}); myPromise.then(function(mod){console.log('success');}, function(err){console.log(err.toString());});}$(document).ready(function(){runit();}); </script></body></html>
